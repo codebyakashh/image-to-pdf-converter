@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image To PDF PRO - Premium Developer SaaS Tool</title>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.15.0/Sortable.min.js"></script>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 font-sans smooth-transition flex flex-col min-h-screen relative antialiased">
+
+    <div class="absolute top-0 left-1/4 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none z-0"></div>
+    <div class="absolute top-1/3 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl pointer-events-none z-0"></div>
+
+    <nav class="border-b border-slate-200 dark:border-slate-800/80 px-8 py-4 flex justify-between items-center glass-effect sticky top-0 z-50">
+        <div class="flex items-center space-x-3 group cursor-pointer">
+            <div class="bg-gradient-to-tr from-indigo-600 to-purple-600 text-white p-2.5 rounded-xl shadow-lg shadow-indigo-500/20 group-hover:scale-110 smooth-transition">
+                <i class="fa-solid fa-file-pdf text-xl"></i>
+            </div>
+            <div class="flex flex-col">
+                <span class="text-lg font-extrabold tracking-tight bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent leading-none">Image To PDF PRO</span>
+                <span class="text-[10px] font-bold text-slate-400 tracking-widest mt-1 uppercase">Enterprise Suite</span>
+            </div>
+        </div>
+        
+        <div class="hidden md:flex items-center space-x-8 text-sm font-semibold text-slate-500 dark:text-slate-400">
+            <a href="#workspace-anchor" class="hover:text-indigo-500 smooth-transition">Converter</a>
+            <a href="#features-anchor" class="hover:text-indigo-500 smooth-transition">Platform Features</a>
+            <a href="#analytics-anchor" class="hover:text-indigo-500 smooth-transition">Performance Metrics</a>
+            <a href="#workflow-anchor" class="hover:text-indigo-500 smooth-transition">How it works</a>
+        </div>
+
+        <div class="flex items-center space-x-4">
+            <button id="themeBtn" class="p-2.5 rounded-xl bg-slate-200 dark:bg-slate-900/80 hover:scale-110 border border-transparent dark:hover:border-slate-800 smooth-transition cursor-pointer" title="Switch Workspace Theme">
+                <i class="fa-solid fa-moon text-lg dark:hidden text-slate-600"></i>
+                <i class="fa-solid fa-sun text-lg hidden dark:block text-amber-400"></i>
+            </button>
+            <span class="hidden sm:inline-flex bg-indigo-500/10 text-indigo-500 text-xs font-extrabold px-3 py-1.5 rounded-lg border border-indigo-500/20 uppercase tracking-wider">v2.1 Serverless</span>
+        </div>
+    </nav>
+
+    <header class="max-w-7xl w-full mx-auto px-6 pt-12 pb-6 text-center z-10 relative">
+        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-4">
+            Convert Your Images to Production Ready <span class="bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-transparent">Secure PDFs</span>
+        </h1>
+        <p class="text-base text-slate-500 dark:text-slate-400 max-w-2xl mx-auto font-medium">
+            High fidelity client-side conversion engine. Drag and drop assets, reorganize visually, modify individual aspect ratios, adjust document borders, and compile without compromising tracking privacy.
+        </p>
+    </header>
+
+    <section id="analytics-anchor" class="max-w-7xl w-full mx-auto px-6 mb-12 grid grid-cols-2 md:grid-cols-4 gap-4 z-10 relative">
+        <div class="bg-white dark:bg-slate-900/40 border border-slate-200 dark:border-slate-800/60 rounded-2xl p-4 flex items-center space-x-4 panel-hover smooth-transition">
+            <div class="p-3 rounded-xl bg-indigo-500/10 text-indigo-500 text-xl"><i class="fa-solid fa-bolt"></i></div>
+            <div><h4 class="text-xl font-black leading-none mb-1">0.02s</h4><p class="text-xs text-slate-400 font-bold uppercase">Processing Delay</p></div>
+        </div>
+        <div class="bg-white dark:bg-slate-900/40 border border-slate-200 dark:border-slate-800/60 rounded-2xl p-4 flex items-center space-x-4 panel-hover smooth-transition">
+            <div class="p-3 rounded-xl bg-purple-500/10 text-purple-500 text-xl"><i class="fa-solid fa-shield-halved"></i></div>
+            <div><h4 class="text-xl font-black leading-none mb-1">100%</h4><p class="text-xs text-slate-400 font-bold uppercase">Local Encrypted</p></div>
+        </div>
+        <div class="bg-white dark:bg-slate-900/40 border border-slate-200 dark:border-slate-800/60 rounded-2xl p-4 flex items-center space-x-4 panel-hover smooth-transition">
+            <div class="p-3 rounded-xl bg-emerald-500/10 text-emerald-500 text-xl"><i class="fa-solid fa-compress"></i></div>
+            <div><h4 class="text-xl font-black leading-none mb-1">Smart</h4><p class="text-xs text-slate-400 font-bold uppercase">SaaS Compression</p></div>
+        </div>
+        <div class="bg-white dark:bg-slate-900/40 border border-slate-200 dark:border-slate-800/60 rounded-2xl p-4 flex items-center space-x-4 panel-hover smooth-transition">
+            <div class="p-3 rounded-xl bg-amber-500/10 text-amber-500 text-xl"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+            <div><h4 class="text-xl font-black leading-none mb-1">Unlimited</h4><p class="text-xs text-slate-400 font-bold uppercase">Batch Conversions</p></div>
+        </div>
+    </section>
+
+    <main id="workspace-anchor" class="max-w-7xl w-full mx-auto px-6 grid grid-cols-1 lg:grid-cols-4 gap-8 z-10 relative flex-grow mb-16">
+        
+        <section class="lg:col-span-1 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-5 shadow-sm space-y-6 h-fit sticky top-24 panel-hover smooth-transition">
+            <h2 class="text-sm font-bold tracking-wider text-slate-400 uppercase border-b border-slate-100 dark:border-slate-800 pb-3 flex items-center gap-2">
+                <i class="fa-solid fa-sliders text-indigo-500"></i> Compilation Controls
+            </h2>
+
+            <div>
+                <label class="text-xs font-bold text-slate-400 uppercase tracking-wider block mb-2">PDF Document Name</label>
+                <div class="relative group">
+                    <input type="text" id="pdfName" value="Converted_Doc" class="w-full bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-4 py-2.5 pl-10 focus:outline-none focus:border-indigo-500 text-sm font-medium smooth-transition">
+                    <i class="fa-solid fa-pen text-xs text-slate-400 absolute left-3.5 top-4 group-focus-within:text-indigo-500 smooth-transition"></i>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-3">
+                <div>
+                    <label class="text-xs font-bold text-slate-400 uppercase tracking-wider block mb-2">Page Size</label>
+                    <select id="pageSize" class="w-full bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-3 py-2.5 text-sm font-medium focus:outline-none focus:border-indigo-500 cursor-pointer smooth-transition">
+                        <option value="a4">A4 (Standard)</option>
+                        <option value="letter">US Letter</option>
+                        <option value="original">Match Image</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="text-xs font-bold text-slate-400 uppercase tracking-wider block mb-2">Orientation</label>
+                    <select id="orientation" class="w-full bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-3 py-2.5 text-sm font-medium focus:outline-none focus:border-indigo-500 cursor-pointer smooth-transition">
+                        <option value="p">Portrait</option>
+                        <option value="l">Landscape</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <label class="text-xs font-bold text-slate-400 uppercase tracking-wider block mb-2">Margin Thickness</label>
+                <select id="marginSize" class="w-full bg-slate-50 dark:bg-slate-950 border border-slate-200 dark:border-slate-800 rounded-xl px-3 py-2.5 text-sm font-medium focus:outline-none focus:border-indigo-500 cursor-pointer smooth-transition">
+                    <option value="0">Zero Margins (Borderless)</option>
+                    <option value="10">Normal Borders (10mm)</option>
+                    <option value="25">Thick Borders (25mm)</option>
+                </select>
+            </div>
+
+            <div>
+                <div class="flex justify-between items-center mb-2">
+                    <label class="text-xs font-bold text-slate-400 uppercase tracking-wider">Compression Matrix</label>
+                    <span id="qualityVal" class="text-xs font-black text-indigo-500 bg-indigo-500/10 px-2 py-0.5 rounded-md">85%</span>
+                </div>
+                <input type="range" id="quality" min="10" max="100" value="85" class="w-full h-2 bg-slate-200 dark:bg-slate-800 rounded-lg appearance-none cursor-pointer accent-indigo-600 smooth-transition">
+            </div>
+
+            <button id="convertBtn" class="w-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-bold py-3.5 rounded-xl shadow-lg shadow-indigo-600/20 hover:scale-[1.03] active:scale-[0.98] smooth-transition cursor-pointer flex items-center justify-center gap-2 mt-4">
+                <i class="fa-solid fa-wand-magic-sparkles"></i> Compile Document Bundle
+            </button>
+        </section>
+
+        <section class="lg:col-span-3 flex flex-col space-y-6">
+            
+            <div id="dropZone" class="border-2 border-dashed border-slate-300 dark:border-slate-800 bg-white dark:bg-slate-900/30 rounded-2xl p-10 text-center cursor-pointer smooth-transition group flex flex-col items-center justify-center min-h-[260px] dropzone-glow relative overflow-hidden">
+                <input type="file" id="imageInput" multiple accept="image/*" class="hidden">
+                
+                <div id="uploadBtn" class="bg-indigo-50 dark:bg-indigo-950/40 text-indigo-600 dark:text-indigo-400 p-5 rounded-full mb-4 group-hover:scale-110 group-hover:bg-indigo-600 group-hover:text-white smooth-transition shadow-inner">
+                    <i class="fa-solid fa-cloud-arrow-up text-3xl"></i>
+                </div>
+                <h3 class="text-lg font-bold mb-1 group-hover:text-indigo-500 smooth-transition">Drop target visual files here</h3>
+                <p class="text-sm text-slate-400 mb-5 font-medium">Batch processing engines map canvas configurations locally</p>
+                <span class="bg-gradient-to-r from-slate-100 to-slate-200 dark:from-slate-800 dark:to-slate-900 dark:text-slate-200 text-slate-700 text-xs font-bold px-6 py-3 rounded-xl border border-slate-200 dark:border-slate-700 shadow-sm group-hover:border-indigo-500 smooth-transition">Launch Storage Node</span>
+            </div>
+
+            <div class="flex justify-between items-center hidden transition-all duration-300 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 px-4 py-3 rounded-xl" id="workspaceControls">
+                <span class="text-sm text-slate-500 dark:text-slate-400 font-semibold flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span id="imageCount" class="text-indigo-500 font-extrabold text-base">0</span> Active Memory Nodes Loaded
+                </span>
+                <div class="flex space-x-2">
+                    <button id="addMoreBtn" class="text-xs text-indigo-500 font-bold hover:bg-indigo-500/10 border border-slate-200 dark:border-slate-800 px-3 py-2 rounded-xl smooth-transition cursor-pointer flex items-center gap-1.5">
+                        <i class="fa-solid fa-plus"></i> Inject More
+                    </button>
+                    <button id="clearBtn" class="text-xs text-rose-500 font-bold hover:bg-rose-500/10 border border-slate-200 dark:border-slate-800 px-3 py-2 rounded-xl smooth-transition cursor-pointer flex items-center gap-1.5">
+                        <i class="fa-solid fa-trash-can"></i> Wipe Cache
+                    </button>
+                </div>
+            </div>
+
+            <div id="imageGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5">
+                </div>
+        </section>
+    </main>
+
+    <section id="features-anchor" class="max-w-7xl w-full mx-auto px-6 mb-16 border-t border-slate-200 dark:border-slate-900 pt-16 z-10 relative">
+        <div class="text-center mb-12">
+            <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">Engine Capabilities Specifications</h2>
+            <p class="text-sm text-slate-400 mt-2 font-medium">Built with advanced functional client mechanics for zero-data intercept vectors.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 panel-hover smooth-transition">
+                <i class="fa-solid fa-arrows-turn-to-dots text-2xl text-indigo-500 mb-4 block"></i>
+                <h3 class="text-base font-bold mb-2">Visual Drag Sorting Engine</h3>
+                <p class="text-xs text-slate-400 leading-relaxed font-medium">Re-order sequence frames instantly prior to document compilation matrices using clean hardware-accelerated pointer trackers.</p>
+            </div>
+            <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 panel-hover smooth-transition">
+                <i class="fa-solid fa-crop-simple text-2xl text-purple-500 mb-4 block"></i>
+                <h3 class="text-base font-bold mb-2">Axis Vector Rotation</h3>
+                <p class="text-xs text-slate-400 leading-relaxed font-medium">Isolate structural inverted frames and incrementally alter orientation parameters by ninety-degree vectors seamlessly in memory grids.</p>
+            </div>
+            <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-6 panel-hover smooth-transition">
+                <i class="fa-solid fa-microchip text-2xl text-emerald-500 mb-4 block"></i>
+                <h3 class="text-base font-bold mb-2">High Fidelity Matrix Compiler</h3>
+                <p class="text-xs text-slate-400 leading-relaxed font-medium">Utilizes custom canvas matrix operations to compress high resolution raster file sets down into highly optimized document packages.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="workflow-anchor" class="max-w-7xl w-full mx-auto px-6 mb-20 z-10 relative">
+        <div class="bg-gradient-to-r from-slate-900 to-indigo-950 text-white rounded-3xl p-8 md:p-12 border border-indigo-500/10 shadow-xl relative overflow-hidden">
+            <div class="absolute right-0 bottom-0 text-slate-800/10 text-9xl font-black select-none pointer-events-none translate-x-10 translate-y-10">CORE</div>
+            <div class="max-w-xl">
+                <span class="text-xs font-extrabold text-indigo-400 uppercase tracking-widest bg-indigo-400/10 px-3 py-1 rounded-md">How Ecosystem Processes</span>
+                <h2 class="text-2xl md:text-3xl font-extrabold mt-4 mb-8 tracking-tight">Four Step Linear Processing Path</h2>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-sm">
+                <div class="space-y-2"><div class="text-indigo-400 font-black text-xl">01 /</div><h4 class="font-bold text-slate-200">Load Assets</h4><p class="text-xs text-slate-400 font-medium">Inject your raster image buffers into our sandbox drop environment area.</p></div>
+                <div class="space-y-2"><div class="text-indigo-400 font-black text-xl">02 /</div><h4 class="font-bold text-slate-200">Refine Sequences</h4><p class="text-xs text-slate-400 font-medium">Visually align position parameters and rotate inverted documents cleanly.</p></div>
+                <div class="space-y-2"><div class="text-indigo-400 font-black text-xl">03 /</div><h4 class="font-bold text-slate-200">Configure Limits</h4><p class="text-xs text-slate-400 font-medium">Establish compression scaling indexes, margins formatting parameters, and sizes.</p></div>
+                <div class="space-y-2"><div class="text-indigo-400 font-black text-xl">04 /</div><h4 class="font-bold text-slate-200">Generate Vectors</h4><p class="text-xs text-slate-400 font-medium">Trigger compiling algorithms to assemble high speed downloadable secure PDFs.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="premium-bottom-footer w-full bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-900/60 transition-colors duration-300 z-10 relative">
+        <div class="footer-inner max-w-7xl mx-auto px-8 py-10 flex flex-col items-center text-center">
+            
+            <h3 class="text-xl font-black text-slate-900 dark:text-white flex items-center gap-2 mb-2 tracking-tight group cursor-pointer">
+                <i class="fa-solid fa-file-pdf text-indigo-500 group-hover:rotate-6 smooth-transition"></i>
+                Image To PDF PRO
+            </h3>
+
+            <p class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-6">
+                Fast &bull; Secure &bull; Professional PDF Converter
+            </p>
+
+            <div class="footer-socials flex items-center space-x-5 mb-8">
+                <a href="#" class="w-9 h-9 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-500 dark:text-slate-400 hover:text-indigo-500 dark:hover:text-indigo-400 hover:border-indigo-500/30 flex items-center justify-center hover:scale-110 smooth-transition"><i class="fa-brands fa-github text-base"></i></a>
+                <a href="#" class="w-9 h-9 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-500 dark:text-slate-400 hover:text-indigo-500 dark:hover:text-indigo-400 hover:border-indigo-500/30 flex items-center justify-center hover:scale-110 smooth-transition"><i class="fa-brands fa-instagram text-base"></i></a>
+                <a href="#" class="w-9 h-9 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-500 dark:text-slate-400 hover:text-indigo-500 dark:hover:text-indigo-400 hover:border-indigo-500/30 flex items-center justify-center hover:scale-110 smooth-transition"><i class="fa-brands fa-linkedin text-base"></i></a>
+                <a href="#" class="w-9 h-9 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-500 dark:text-slate-400 hover:text-indigo-500 dark:hover:text-indigo-400 hover:border-indigo-500/30 flex items-center justify-center hover:scale-110 smooth-transition"><i class="fa-brands fa-x-twitter text-base"></i></a>
+            </div>
+
+            <div class="footer-line w-full max-w-md h-[1px] bg-gradient-to-r from-transparent via-slate-200 dark:via-slate-800 to-transparent mb-6"></div>
+
+            <p class="copyright text-xs font-semibold text-slate-400/80 tracking-wide mb-1">
+                &copy; 2026 All Rights Reserved
+            </p>
+
+            <p class="creator text-xs font-bold text-slate-400 tracking-wide">
+                Designed & Developed By <span class="bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-transparent font-extrabold text-sm ml-0.5">Akash Chaudhary</span>
+            </p>
+
+        </div>
+    </footer>
+
+    <div id="loader" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md z-[100] flex-col items-center justify-center gap-4 hidden">
+        <div class="relative flex items-center justify-center">
+            <div class="w-16 h-16 border-4 border-indigo-500/20 border-t-indigo-500 rounded-full animate-spin"></div>
+            <i class="fa-solid fa-file-pdf text-indigo-500 text-xl absolute"></i>
+        </div>
+        <p class="text-xs font-black tracking-widest text-slate-200 uppercase animate-pulse">Compiling Asset Matrix Node...</p>
+    </div>
+
+    <div id="toast" class="fixed bottom-8 left-1/2 -translate-x-1/2 bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 text-xs font-bold px-5 py-3.5 rounded-xl shadow-2xl transition-all duration-300 opacity-0 transform translate-y-4 pointer-events-none tracking-wide flex items-center gap-2.5 z-[99]">
+        <div class="bg-indigo-500 text-white rounded-full p-1 flex items-center justify-center w-5 h-5 shadow-sm shadow-indigo-500/30">
+            <i class="fa-solid fa-check text-[10px]"></i>
+        </div>
+        <span id="toastMsg">Workspace Process Updated</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
